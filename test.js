@@ -4,11 +4,13 @@ const options = {
     browserName: 'chrome'
   }
 };
+const client = webdriverio.remote(options);
 
-webdriverio
-  .remote(options)
+client
   .init()
-  .url('http://www.google.com')
+  .url('https://duckduckgo.com')
+  .setValue('#search_form_input_homepage', 'WebdriverIO')
+  .click('#search_button_homepage')
   .getTitle().then((title) => {
     console.log('Title was: ' + title);
   })
