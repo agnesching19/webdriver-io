@@ -11,6 +11,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "chai-as-promised": "^7.1.1",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "webdriverio": "^4.10.2"
   },
@@ -21,7 +22,7 @@
     "wdio-mocha-framework": "^0.5.12"
   },
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "author": "Agnes Ching",
   "license": "ISC"

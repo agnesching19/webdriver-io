@@ -55,7 +55,7 @@ exports.config = {
     // By default WebdriverIO commands are executed in a synchronous way using
     // the wdio-sync package. If you still want to run your tests in an async way
     // e.g. using promises you can set the sync option to false.
-    sync: true,
+    sync: false,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
     logLevel: 'silent',
@@ -162,6 +162,12 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
+
+    before: function() {
+      var chai = require('chai');
+      global.expect = chai.expect;
+      chai.Should();
+    }
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

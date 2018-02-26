@@ -1,9 +1,12 @@
 const webdriverio = require('webdriverio');
+const assert = require('chai').assert;
+
 const options = {
   desiredCapabilities: {
     browserName: 'chrome'
   }
 };
+
 const client = webdriverio.remote(options);
 
 client
@@ -19,17 +22,11 @@ client
     console.log(err);
   });
 
-
-// const mocha = require('mocha')
-// const describe = mocha.describe
-// const it = mocha.it
-// const assert = require('chai').assert
-
-
-// describe('webdriver.io page', function() {
-//     it('should have the right title', function () {
-//         browser.url('/');
-//         var title = browser.getTitle();
-//         assert.equal(title, 'WebdriverIO - WebDriver bindings for Node.js');
-//     });
-// });
+describe('my awesome website', () => {
+  it('should do some chai assertions', () => {
+    browser.url('http://webdriver.io');
+    browser.getTitle().then((title) => {
+      title.should.equal('WebdriverIO - WebDriver bindings for Node.js');
+    })
+  });
+});
