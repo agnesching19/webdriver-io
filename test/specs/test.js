@@ -18,3 +18,18 @@ client
   .catch((err) => {
     console.log(err);
   });
+
+
+// const mocha = require('mocha')
+// const describe = mocha.describe
+// const it = mocha.it
+// const assert = require('chai').assert
+
+
+// describe('webdriver.io page', function() {
+//     it('should have the right title', function () {
+//         browser.url('/');
+//         var title = browser.getTitle();
+//         assert.equal(title, 'WebdriverIO - WebDriver bindings for Node.js');
+//     });
+// });
