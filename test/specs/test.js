@@ -4,16 +4,15 @@ const assert = require('chai').assert;
 const options = {
   desiredCapabilities: {
     browserName: 'chrome'
-  }
+  };
 };
 
 const client = webdriverio.remote(options);
 
 client
   .init()
-  .url('https://duckduckgo.com')
-  .setValue('#search_form_input_homepage', 'WebdriverIO')
-  .click('#search_button_homepage')
+  .url('https://www.dev.fixter.co.uk/')
+  .click('.fixter-cta-btn')
   .getTitle().then((title) => {
     console.log('Title was: ' + title);
   })
@@ -23,10 +22,13 @@ client
   });
 
 describe('my awesome website', () => {
-  it('should do some chai assertions', () => {
-    browser.url('http://webdriver.io');
-    browser.getTitle().then((title) => {
-      title.should.equal('WebdriverIO - WebDriver bindings for Node.js');
+  it('should render Get a free quote', () => {
+    browser.url('https://www.dev.fixter.co.uk/');
+    browser.click('.fixter-cta-btn').then((e) => {
+      e.should.equal('');
     })
+    // browser.getTitle().then((title) => {
+    //   title.should.equal('WebdriverIO - WebDriver bindings for Node.js');
+    // })
   });
 });
